@@ -13,12 +13,13 @@ namespace GUI_READ_WRITE_DATA
 
         private void BtnGetCountriesSA_Click(object sender, EventArgs e)
         {
-            // EXAMPLE #1
+            // EXAMPLE #1 *****************************************************
             try
             {
                 string country;
                 StreamReader myInputFile;
-                myInputFile = File.OpenText("C:\\Users\\Jose\\Desktop\\App_Data\\Countries.txt");
+                // Rememeber, if no path is indicated the files are saved in the bin/debug/
+                myInputFile = File.OpenText("Countries.txt");
 
                 // Clear Listbox
                 LBoxCountries.Items.Clear();
@@ -44,7 +45,7 @@ namespace GUI_READ_WRITE_DATA
 
         }
 
-        // EXAMPLE #2
+        // EXAMPLE #2 *****************************************************
         private void BtnAddToList_Click(object sender, EventArgs e)
         {
             LBoxData.Items.Add(TxtData.Text);
@@ -57,7 +58,8 @@ namespace GUI_READ_WRITE_DATA
             try
             {
                 StreamWriter myOutputFile;
-                myOutputFile = File.CreateText("C:\\Users\\Jose\\Desktop\\App_Data\\Data.txt");
+                //Rememeber, if no path is indicated the files are saved in the bin/debug/
+                myOutputFile = File.CreateText("Data.txt");
 
                 foreach (string s in LBoxData.Items)
                 {
@@ -65,6 +67,7 @@ namespace GUI_READ_WRITE_DATA
                 }
 
                 myOutputFile.Close();
+                MessageBox.Show("Data saved to file");
 
             }
             catch (Exception ex)
@@ -74,9 +77,10 @@ namespace GUI_READ_WRITE_DATA
         }
 
 
-        // EXAMPLE #3
+        // EXAMPLE #3  *****************************************************
         private void BtnLoadToDoList_Click(object sender, EventArgs e)
         {
+            // Edit the following path according to your environment
             openFileDialog1.InitialDirectory = "C:\\Users\\Jose\\Desktop\\App_Data";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -119,6 +123,7 @@ namespace GUI_READ_WRITE_DATA
 
         private void BtnSaveToDoList_Click(object sender, EventArgs e)
         {
+            // Edit the following path according to your environment
             saveFileDialog1.InitialDirectory = "C:\\Users\\Jose\\Desktop\\App_Data";
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -137,7 +142,7 @@ namespace GUI_READ_WRITE_DATA
 
                     myOutputFile.Close();
 
-
+                    MessageBox.Show("To-Do List saved to file");
                 }
                 catch (Exception ex)
                 {
@@ -155,6 +160,12 @@ namespace GUI_READ_WRITE_DATA
             LBoxToDoList.Items.Add(TxtToDoItem.Text);
             TxtToDoItem.Clear();
             TxtToDoItem.Focus();
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            int selectedItemIndex = LBoxToDoList.SelectedIndex;
+            LBoxToDoList.Items.RemoveAt(selectedItemIndex);
         }
     }
 }

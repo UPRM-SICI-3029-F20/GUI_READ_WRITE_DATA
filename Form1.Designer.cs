@@ -39,13 +39,14 @@
             this.TxtData = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.BtnLoadToDoList = new System.Windows.Forms.Button();
+            this.BtnAddItemToList = new System.Windows.Forms.Button();
+            this.TxtToDoItem = new System.Windows.Forms.TextBox();
+            this.LBoxToDoList = new System.Windows.Forms.ListBox();
             this.BtnSaveToDoList = new System.Windows.Forms.Button();
+            this.BtnLoadToDoList = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.LBoxToDoList = new System.Windows.Forms.ListBox();
-            this.TxtToDoItem = new System.Windows.Forms.TextBox();
-            this.BtnAddItemToList = new System.Windows.Forms.Button();
+            this.BtnRemove = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -123,7 +124,7 @@
             this.BtnAddToList.Name = "BtnAddToList";
             this.BtnAddToList.Size = new System.Drawing.Size(200, 23);
             this.BtnAddToList.TabIndex = 3;
-            this.BtnAddToList.Text = "Add to List Box below";
+            this.BtnAddToList.Text = "Add data to List Box below";
             this.BtnAddToList.UseVisualStyleBackColor = true;
             this.BtnAddToList.Click += new System.EventHandler(this.BtnAddToList_Click);
             // 
@@ -154,6 +155,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.PeachPuff;
+            this.groupBox3.Controls.Add(this.BtnRemove);
             this.groupBox3.Controls.Add(this.BtnAddItemToList);
             this.groupBox3.Controls.Add(this.TxtToDoItem);
             this.groupBox3.Controls.Add(this.LBoxToDoList);
@@ -161,10 +163,45 @@
             this.groupBox3.Controls.Add(this.BtnLoadToDoList);
             this.groupBox3.Location = new System.Drawing.Point(20, 302);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(232, 311);
+            this.groupBox3.Size = new System.Drawing.Size(232, 352);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Example #3";
+            // 
+            // BtnAddItemToList
+            // 
+            this.BtnAddItemToList.Location = new System.Drawing.Point(49, 86);
+            this.BtnAddItemToList.Name = "BtnAddItemToList";
+            this.BtnAddItemToList.Size = new System.Drawing.Size(122, 24);
+            this.BtnAddItemToList.TabIndex = 5;
+            this.BtnAddItemToList.Text = "Add item to List";
+            this.BtnAddItemToList.UseVisualStyleBackColor = true;
+            this.BtnAddItemToList.Click += new System.EventHandler(this.BtnAddItemToList_Click);
+            // 
+            // TxtToDoItem
+            // 
+            this.TxtToDoItem.Location = new System.Drawing.Point(21, 58);
+            this.TxtToDoItem.Name = "TxtToDoItem";
+            this.TxtToDoItem.Size = new System.Drawing.Size(176, 20);
+            this.TxtToDoItem.TabIndex = 4;
+            // 
+            // LBoxToDoList
+            // 
+            this.LBoxToDoList.FormattingEnabled = true;
+            this.LBoxToDoList.Location = new System.Drawing.Point(22, 120);
+            this.LBoxToDoList.Name = "LBoxToDoList";
+            this.LBoxToDoList.Size = new System.Drawing.Size(176, 134);
+            this.LBoxToDoList.TabIndex = 3;
+            // 
+            // BtnSaveToDoList
+            // 
+            this.BtnSaveToDoList.Location = new System.Drawing.Point(19, 317);
+            this.BtnSaveToDoList.Name = "BtnSaveToDoList";
+            this.BtnSaveToDoList.Size = new System.Drawing.Size(179, 23);
+            this.BtnSaveToDoList.TabIndex = 2;
+            this.BtnSaveToDoList.Text = "Save To-Do List";
+            this.BtnSaveToDoList.UseVisualStyleBackColor = true;
+            this.BtnSaveToDoList.Click += new System.EventHandler(this.BtnSaveToDoList_Click);
             // 
             // BtnLoadToDoList
             // 
@@ -176,50 +213,25 @@
             this.BtnLoadToDoList.UseVisualStyleBackColor = true;
             this.BtnLoadToDoList.Click += new System.EventHandler(this.BtnLoadToDoList_Click);
             // 
-            // BtnSaveToDoList
-            // 
-            this.BtnSaveToDoList.Location = new System.Drawing.Point(19, 267);
-            this.BtnSaveToDoList.Name = "BtnSaveToDoList";
-            this.BtnSaveToDoList.Size = new System.Drawing.Size(179, 23);
-            this.BtnSaveToDoList.TabIndex = 2;
-            this.BtnSaveToDoList.Text = "Save To-Do List";
-            this.BtnSaveToDoList.UseVisualStyleBackColor = true;
-            this.BtnSaveToDoList.Click += new System.EventHandler(this.BtnSaveToDoList_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // LBoxToDoList
+            // BtnRemove
             // 
-            this.LBoxToDoList.FormattingEnabled = true;
-            this.LBoxToDoList.Location = new System.Drawing.Point(22, 120);
-            this.LBoxToDoList.Name = "LBoxToDoList";
-            this.LBoxToDoList.Size = new System.Drawing.Size(176, 134);
-            this.LBoxToDoList.TabIndex = 3;
-            // 
-            // TxtToDoItem
-            // 
-            this.TxtToDoItem.Location = new System.Drawing.Point(21, 58);
-            this.TxtToDoItem.Name = "TxtToDoItem";
-            this.TxtToDoItem.Size = new System.Drawing.Size(176, 20);
-            this.TxtToDoItem.TabIndex = 4;
-            // 
-            // BtnAddItemToList
-            // 
-            this.BtnAddItemToList.Location = new System.Drawing.Point(49, 86);
-            this.BtnAddItemToList.Name = "BtnAddItemToList";
-            this.BtnAddItemToList.Size = new System.Drawing.Size(122, 24);
-            this.BtnAddItemToList.TabIndex = 5;
-            this.BtnAddItemToList.Text = "Add to List";
-            this.BtnAddItemToList.UseVisualStyleBackColor = true;
-            this.BtnAddItemToList.Click += new System.EventHandler(this.BtnAddItemToList_Click);
+            this.BtnRemove.Location = new System.Drawing.Point(19, 272);
+            this.BtnRemove.Name = "BtnRemove";
+            this.BtnRemove.Size = new System.Drawing.Size(178, 23);
+            this.BtnRemove.TabIndex = 6;
+            this.BtnRemove.Text = "Delete selected item";
+            this.BtnRemove.UseVisualStyleBackColor = true;
+            this.BtnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 625);
+            this.ClientSize = new System.Drawing.Size(713, 666);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -256,6 +268,7 @@
         private System.Windows.Forms.Button BtnAddItemToList;
         private System.Windows.Forms.TextBox TxtToDoItem;
         private System.Windows.Forms.ListBox LBoxToDoList;
+        private System.Windows.Forms.Button BtnRemove;
     }
 }
 
