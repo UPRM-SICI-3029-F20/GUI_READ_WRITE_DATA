@@ -18,8 +18,9 @@ namespace GUI_READ_WRITE_DATA
             {
                 string country;
                 StreamReader myInputFile;
-                // Rememeber, if no path is indicated the files are saved in the bin/debug/
-                myInputFile = File.OpenText("Countries.txt");
+                // Edit the following path according to your environment
+                myInputFile = File.OpenText("C:\\Users\\Jose\\Desktop\\App_Data\\Countries.txt");
+                // Note: Rememeber, if no path is indicated the files are saved in the bin/debug/
 
                 // Clear Listbox
                 LBoxCountries.Items.Clear();
@@ -58,8 +59,10 @@ namespace GUI_READ_WRITE_DATA
             try
             {
                 StreamWriter myOutputFile;
-                //Rememeber, if no path is indicated the files are saved in the bin/debug/
-                myOutputFile = File.CreateText("Data.txt");
+
+                // Edit the following path according to your environment
+                myOutputFile = File.CreateText("C:\\Users\\Jose\\Desktop\\App_Data\\Data.txt");
+                //NOTE: Rememeber, if no path is indicated the files are saved in the bin/debug/
 
                 foreach (string s in LBoxData.Items)
                 {
